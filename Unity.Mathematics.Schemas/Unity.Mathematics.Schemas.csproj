@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="build settings">
+    <TargetFrameworks>net9.0;netstandard2.1</TargetFrameworks>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <PropertyGroup Label="build metadata">
+    <PackageId>UnityMathematics.Schemas</PackageId>
+    <Title>Unity.Mathematics Schemas</Title>
+    <Description>FlatBuffer schemas for Unity.Mathematics types </Description>
+    <PackageTags>Unity;Mathematics;Schema;FlatBuffer;FlatSharp</PackageTags>
+    <PackageIcon>Icon.png</PackageIcon>
+    <PackageIconUrl>https://raw.github.com/KageKirin/Unity.Mathematics.Schemas/Icon.png</PackageIconUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Label="FlatSharp build settings">
+    <FlatSharpNameNormalization>true</FlatSharpNameNormalization>
+    <FlatSharpNullable>true</FlatSharpNullable>
+    <FlatSharpDeserializers>Lazy;Progressive;GreedyMutable</FlatSharpDeserializers>
+  </PropertyGroup>
+
+  <ItemGroup Label="packaged files">
+    <Content Include="$(MSBuildThisFileDirectory)**\*.fbs" Pack="true"/>
+  </ItemGroup>
+
+  <ItemGroup Label="schema files">
+    <FlatSharpSchema Include="$(MSBuildThisFileDirectory)**\*.fbs"/>
+  </ItemGroup>
+
+  <ItemGroup Label="package dependencies">
+    <PackageReference Include="FlatSharp.Compiler">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="FlatSharp.Runtime" />
+    <PackageReference Include="UnityMathematics.NoDeps" />
+  </ItemGroup>
+
+</Project>
