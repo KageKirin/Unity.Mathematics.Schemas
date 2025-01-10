@@ -1,0 +1,64 @@
+<Project>
+
+  <PropertyGroup Label="common build settings">
+    <LangVersion>latest</LangVersion>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IncludeBuildOutput>true</IncludeBuildOutput>
+    <UseArtifactsOutput>true</UseArtifactsOutput>
+    <ArtifactsPath>$(MSBuildThisFileDirectory).artifacts</ArtifactsPath>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
+  <PropertyGroup Label="publishing settings">
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <EmbedAllSources>true</EmbedAllSources>
+    <DebugType>embedded</DebugType>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <IncludeSource>false</IncludeSource>
+    <Deterministic>true</Deterministic>
+    <SymbolPackageFormat>symbols.nupkg</SymbolPackageFormat>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <RepositoryUrl>https://github.com/KageKirin/Unity.Mathematics.Schemas.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <EnablePackageValidation>true</EnablePackageValidation>
+    <EnableSourceLink>true</EnableSourceLink>
+  </PropertyGroup>
+
+  <PropertyGroup Label="common build metadata">
+    <PackageProjectUrl>https://github.com/KageKirin/Unity.Mathematics.Schemas</PackageProjectUrl>
+    <Copyright>Copyright © $(Owners) $([System.DateTime]::Now.Year)</Copyright>
+    <Authors>Chris 'KageKirin' Helmich</Authors>
+    <Owners>$(Authors)</Owners>
+    <Company>KageKirin</Company>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>CHANGELOG.md</PackageReleaseNotes>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <PropertyGroup Label="MinVer configuration">
+    <MinVerTagPrefix>v</MinVerTagPrefix>
+  </PropertyGroup>
+
+  <ItemGroup Label="packaged files">
+    <None Include="$(MSBuildThisFileDirectory)README.md" Pack="true" PackagePath="\" />
+    <None Include="$(MSBuildThisFileDirectory)LICENSE" Pack="true" PackagePath="\" />
+    <None Include="$(MSBuildThisFileDirectory)CHANGELOG.md" Pack="true" PackagePath="\" />
+    <None Include="$(MSBuildThisFileDirectory)Icon.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup Label="source link settings">
+    <SourceLinkGitHubHost Include="github.com" ContentUrl="https://raw.github.com" />
+  </ItemGroup>
+
+</Project>
