@@ -1,0 +1,24 @@
+name: publish-nuget
+
+on:
+  release:
+    types: [published]
+
+concurrency:
+  group: ${{ github.actor_id }}-${{ github.workflow }}-${{ github.ref }}-${{ github.sha }}
+  cancel-in-progress: true
+
+jobs:
+  publish-nuget:
+    permissions:
+      contents: read
+      packages: write
+    uses: kagekirin/gha-py-toolbox/.github/workflows/dotnet-publish-nuget.yml@main
+    with:
+      configurations: ${{ vars.DEPLOY_CONFIGURATIONS }}
+      frameworks: ${{ vars.DEPLOY_FRAMEWORKS }}
+      projects: ${{ vars.DEPLOY_PROJECTS }}
+      sources: ${{ vars.DEPLOY_SOURCES }}
+      include: ${{ vars.DEPLOY_MATRIX }}
+      dry-run: false
+    secrets: inherit

@@ -1,0 +1,24 @@
+name: publish-upm
+
+on:
+  registry_package:
+    types: [published]
+
+concurrency:
+  group: ${{ github.actor_id }}-${{ github.workflow }}-${{ github.ref }}-${{ github.sha }}-${{ github.event.registry_package.name }}-${{ github.event.registry_package.package_version.name }}-${{ github.event.registry_package.id }}
+  cancel-in-progress: true
+
+jobs:
+  upm:
+    permissions:
+      contents: read
+      packages: write
+    uses: kagekirin/gha-py-toolbox/.github/workflows/dotnet-publish-upm.yml@main
+    with:
+      amalgamate: ${{ vars.UPM_AMALGAMATE }}
+      targets: ${{ vars.UPM_TARGETS }}
+      include: ${{ vars.UPM_MATRIX }}
+      nugettier-config: ${{ vars.NUGETTIER_NETCONFIG }}
+      nugettier-user-config: ${{ vars.NUGETTIER_NETCONFIG_USER }}
+      dry-run: false
+    secrets: inherit

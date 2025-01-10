@@ -1,0 +1,17 @@
+name: release (published)
+
+on:
+  registry_package:
+    types: [published]
+
+concurrency:
+  group: ${{ github.actor_id }}-${{ github.workflow }}-${{ github.ref }}-${{ github.sha }}-${{ github.event.registry_package.id }}
+  cancel-in-progress: true
+
+jobs:
+  release-published:
+    permissions:
+      contents: write
+      packages: read
+    uses: kagekirin/gha-py-toolbox/.github/workflows/github-add-published-package-to-release.yml@main
+    secrets: inherit
