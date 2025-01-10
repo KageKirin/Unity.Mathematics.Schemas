@@ -1,0 +1,54 @@
+name: build-branch
+
+on:
+  push:
+    branches-ignore:
+      - 'main'
+
+concurrency:
+  group: ${{ github.actor_id }}-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    uses: kagekirin/gha-py-toolbox/.github/workflows/dotnet-build.yml@main
+    with:
+      configurations: ${{ vars.CONFIGURATIONS }}
+      frameworks: ${{ vars.FRAMEWORKS }}
+      include: ${{ vars.BUILD_MATRIX }}
+    secrets: inherit
+
+
+  unittests:
+    needs:
+    - build
+    uses: kagekirin/gha-py-toolbox/.github/workflows/dotnet-unittests.yml@main
+    with:
+      max-parallel: 4
+      configurations: ${{ vars.CONFIGURATIONS }}
+      frameworks: ${{ vars.TEST_FRAMEWORKS }}
+      include: ${{ vars.TEST_MATRIX }}
+    secrets: inherit
+
+
+  test-tag-release:
+    permissions:
+      contents: write
+      packages: read
+    needs:
+    - build
+    uses: kagekirin/gha-py-toolbox/.github/workflows/dotnet-release.yml@main
+    with:
+      dry-run: true
+    secrets: inherit
+
+
+  pack-nuget:
+    needs:
+    - build
+    uses: kagekirin/gha-py-toolbox/.github/workflows/dotnet-pack-nuget.yml@main
+    with:
+      configurations: ${{ vars.DEPLOY_CONFIGURATIONS }}
+      frameworks: ${{ vars.DEPLOY_FRAMEWORKS }}
+      projects: ${{ vars.DEPLOY_PROJECTS }}
+    secrets: inherit
