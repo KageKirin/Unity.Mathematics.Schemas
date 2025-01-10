@@ -1,0 +1,30 @@
+<Project>
+
+  <ItemGroup Label="ThisAssembly.Project">
+    <ProjectProperty Include="RepositoryBranch" />
+    <ProjectProperty Include="RepositorySha" />
+    <ProjectProperty Include="RepositoryCommit" />
+    <ProjectProperty Include="RepositoryRoot" />
+    <ProjectProperty Include="RepositoryUrl" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- https://github.com/dotnet/sourcelink/issues/572 -->
+    <EmbeddedFiles Include="$(GeneratedAssemblyInfoFile)"/>
+  </ItemGroup>
+
+   <Target Name="MinVerFileVersion" AfterTargets="MinVer">
+    <PropertyGroup>
+      <GITHUB_RUN_NUMBER Condition="'$(GITHUB_RUN_NUMBER)' == ''">0</GITHUB_RUN_NUMBER>
+      <FileVersion>$(MinVerMajor).$(MinVerMinor).$(MinVerPatch).$(GITHUB_RUN_NUMBER)</FileVersion>
+    </PropertyGroup>
+  </Target>
+
+  <Target Name="MinVerPackageVersion" AfterTargets="MinVer" Condition="'$(MinVerBuildMetadata)' != ''" >
+    <PropertyGroup>
+      <PackageVersion>$(PackageVersion)+$(MinVerBuildMetadata)</PackageVersion>
+      <Version>$(PackageVersion)</Version>
+    </PropertyGroup>
+  </Target>
+
+</Project>
