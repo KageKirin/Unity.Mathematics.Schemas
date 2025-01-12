@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D39BCC2D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Functionality", "Tests\Functionality\Functionality.csproj", "{FB31C69F-096B-44A7-BD95-E50FEACEE75C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Mathematics.Tables.Schemas", "Unity.Mathematics.Tables.Schemas\Unity.Mathematics.Tables.Schemas.csproj", "{5DA06B16-68D2-42D6-B453-C313F2DC3EFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{FB31C69F-096B-44A7-BD95-E50FEACEE75C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB31C69F-096B-44A7-BD95-E50FEACEE75C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB31C69F-096B-44A7-BD95-E50FEACEE75C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DA06B16-68D2-42D6-B453-C313F2DC3EFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DA06B16-68D2-42D6-B453-C313F2DC3EFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DA06B16-68D2-42D6-B453-C313F2DC3EFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DA06B16-68D2-42D6-B453-C313F2DC3EFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FB31C69F-096B-44A7-BD95-E50FEACEE75C} = {D39BCC2D-90ED-4270-AB56-A92BF242797E}
