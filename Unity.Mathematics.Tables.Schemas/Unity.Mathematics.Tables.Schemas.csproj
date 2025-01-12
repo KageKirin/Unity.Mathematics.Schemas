@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="build settings">
+    <TargetFrameworks>net9.0;netstandard2.1</TargetFrameworks>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+  <PropertyGroup Label="build metadata">
+    <PackageId>UnityMathematics.Tables.Schemas</PackageId>
+    <Title>Unity.Mathematics Tables Schemas</Title>
+    <Description>FlatBuffer schemas for serializable tables wrapping Unity.Mathematics types </Description>
+    <PackageTags>Unity;Mathematics;Schema;FlatBuffer;FlatSharp</PackageTags>
+    <PackageIcon>TablesIcon.png</PackageIcon>
+    <PackageIconUrl>https://raw.github.com/KageKirin/Unity.Mathematics.Schemas/TablesIcon.png</PackageIconUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Label="FlatSharp build settings">
+    <FlatSharpNameNormalization>true</FlatSharpNameNormalization>
+    <FlatSharpNullable>true</FlatSharpNullable>
+    <FlatSharpDeserializers>Lazy;Progressive;GreedyMutable</FlatSharpDeserializers>
+  </PropertyGroup>
+
+  <ItemGroup Label="packaged files">
+    <Content Include="$(MSBuildThisFileDirectory)**\*.fbs" Pack="true"/>
+  </ItemGroup>
+
+  <ItemGroup Label="schema files">
+    <FlatSharpSchema Include="$(MSBuildThisFileDirectory)**\*.fbs">
+      <IncludePath>$(MSBuildThisFileDirectory)..\Unity.Mathematics.Schemas</IncludePath>
+    </FlatSharpSchema>
+  </ItemGroup>
+
+  <ItemGroup Label="package dependencies">
+    <PackageReference Include="FlatSharp.Compiler">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="FlatSharp.Runtime" />
+    <PackageReference Include="UnityMathematics.NoDeps" />
+  </ItemGroup>
+
+  <ItemGroup Label="project dependencies">
+    <ProjectReference Include="..\Unity.Mathematics.Schemas\Unity.Mathematics.Schemas.csproj" GeneratePathProperty="true">
+      <IncludeAssets>contentfiles</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </ProjectReference>
+  </ItemGroup>
+
+</Project>
