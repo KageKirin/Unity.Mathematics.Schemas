@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Mathematics.Schemas", "Unity.Mathematics.Schemas\Unity.Mathematics.Schemas.csproj", "{A041CCDF-870B-4C5A-ABF3-F9B62072A22C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D39BCC2D-90ED-4270-AB56-A92BF242797E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Functionality", "Tests\Functionality\Functionality.csproj", "{FB31C69F-096B-44A7-BD95-E50FEACEE75C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,12 @@ Global
 		{A041CCDF-870B-4C5A-ABF3-F9B62072A22C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A041CCDF-870B-4C5A-ABF3-F9B62072A22C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A041CCDF-870B-4C5A-ABF3-F9B62072A22C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB31C69F-096B-44A7-BD95-E50FEACEE75C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB31C69F-096B-44A7-BD95-E50FEACEE75C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB31C69F-096B-44A7-BD95-E50FEACEE75C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB31C69F-096B-44A7-BD95-E50FEACEE75C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FB31C69F-096B-44A7-BD95-E50FEACEE75C} = {D39BCC2D-90ED-4270-AB56-A92BF242797E}
 	EndGlobalSection
 EndGlobal

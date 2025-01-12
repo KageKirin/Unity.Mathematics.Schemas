@@ -2,7 +2,8 @@
   "solution": {
     "path": "Unity.Mathematics.Schemas.sln",
     "projects": [
-      "Unity.Mathematics.Schemas\\Unity.Mathematics.Schemas.csproj"
+      "Unity.Mathematics.Schemas\\Unity.Mathematics.Schemas.csproj",
+      "Tests\\Functionality\\Functionality.csproj"
     ]
   }
 }
