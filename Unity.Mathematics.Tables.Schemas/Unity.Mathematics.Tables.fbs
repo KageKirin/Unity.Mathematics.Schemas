@@ -1,0 +1,623 @@
+// Flatbuffer schema for containing generic math types (Linear Algebra)
+
+include "Unity.Mathematics.fbs";
+
+namespace Unity.Mathematics.Tables;
+
+attribute "fs_serializer";
+
+///-----------------------------------------------------------------------------
+/// single element tables
+
+table SingleFloat2 (fs_serializer)
+{
+    value: float2 (required);
+}
+
+table SingleFloat3 (fs_serializer)
+{
+    value: float3 (required);
+}
+
+table SingleFloat4 (fs_serializer)
+{
+    value: float4 (required);
+}
+
+table SingleQuaternion (fs_serializer)
+{
+    value: quaternion (required);
+}
+
+table SingleFloat2x2 (fs_serializer)
+{
+    value: float2x2 (required);
+}
+
+table SingleFloat2x3 (fs_serializer)
+{
+    value: float2x3 (required);
+}
+
+table SingleFloat2x4 (fs_serializer)
+{
+    value: float2x4 (required);
+}
+
+table SingleFloat3x2 (fs_serializer)
+{
+    value: float3x2 (required);
+}
+
+table SingleFloat3x3 (fs_serializer)
+{
+    value: float3x3 (required);
+}
+
+table SingleFloat3x4 (fs_serializer)
+{
+    value: float3x4 (required);
+}
+
+table SingleFloat4x2 (fs_serializer)
+{
+    value: float4x2 (required);
+}
+
+table SingleFloat4x3 (fs_serializer)
+{
+    value: float4x3 (required);
+}
+
+table SingleFloat4x4 (fs_serializer)
+{
+    value: float4x4 (required);
+}
+
+table SingleInt2 (fs_serializer)
+{
+    value: int2 (required);
+}
+
+table SingleInt3 (fs_serializer)
+{
+    value: int3 (required);
+}
+
+table SingleInt4 (fs_serializer)
+{
+    value: int4 (required);
+}
+
+table SingleInt2x2 (fs_serializer)
+{
+    value: int2x2 (required);
+}
+
+table SingleInt2x3 (fs_serializer)
+{
+    value: int2x3 (required);
+}
+
+table SingleInt2x4 (fs_serializer)
+{
+    value: int2x4 (required);
+}
+
+table SingleInt3x2 (fs_serializer)
+{
+    value: int3x2 (required);
+}
+
+table SingleInt3x3 (fs_serializer)
+{
+    value: int3x3 (required);
+}
+
+table SingleInt3x4 (fs_serializer)
+{
+    value: int3x4 (required);
+}
+
+table SingleInt4x2 (fs_serializer)
+{
+    value: int4x2 (required);
+}
+
+table SingleInt4x3 (fs_serializer)
+{
+    value: int4x3 (required);
+}
+
+table SingleInt4x4 (fs_serializer)
+{
+    value: int4x4 (required);
+}
+
+table SingleUInt2 (fs_serializer)
+{
+    value: uint2 (required);
+}
+
+table SingleUInt3 (fs_serializer)
+{
+    value: uint3 (required);
+}
+
+table SingleUInt4 (fs_serializer)
+{
+    value: uint4 (required);
+}
+
+table SingleUInt2x2 (fs_serializer)
+{
+    value: uint2x2 (required);
+}
+
+table SingleUInt2x3 (fs_serializer)
+{
+    value: uint2x3 (required);
+}
+
+table SingleUInt2x4 (fs_serializer)
+{
+    value: uint2x4 (required);
+}
+
+table SingleUInt3x2 (fs_serializer)
+{
+    value: uint3x2 (required);
+}
+
+table SingleUInt3x3 (fs_serializer)
+{
+    value: uint3x3 (required);
+}
+
+table SingleUInt3x4 (fs_serializer)
+{
+    value: uint3x4 (required);
+}
+
+table SingleUInt4x2 (fs_serializer)
+{
+    value: uint4x2 (required);
+}
+
+table SingleUInt4x3 (fs_serializer)
+{
+    value: uint4x3 (required);
+}
+
+table SingleUInt4x4 (fs_serializer)
+{
+    value: uint4x4 (required);
+}
+
+table SingleBool2 (fs_serializer)
+{
+    value: bool2 (required);
+}
+
+table SingleBool3 (fs_serializer)
+{
+    value: bool3 (required);
+}
+
+table SingleBool4 (fs_serializer)
+{
+    value: bool4 (required);
+}
+
+table SingleBool2x2 (fs_serializer)
+{
+    value: bool2x2 (required);
+}
+
+table SingleBool2x3 (fs_serializer)
+{
+    value: bool2x3 (required);
+}
+
+table SingleBool2x4 (fs_serializer)
+{
+    value: bool2x4 (required);
+}
+
+table SingleBool3x2 (fs_serializer)
+{
+    value: bool3x2 (required);
+}
+
+table SingleBool3x3 (fs_serializer)
+{
+    value: bool3x3 (required);
+}
+
+table SingleBool3x4 (fs_serializer)
+{
+    value: bool3x4 (required);
+}
+
+table SingleBool4x2 (fs_serializer)
+{
+    value: bool4x2 (required);
+}
+
+table SingleBool4x3 (fs_serializer)
+{
+    value: bool4x3 (required);
+}
+
+table SingleBool4x4 (fs_serializer)
+{
+    value: bool4x4 (required);
+}
+
+table SingleDouble2 (fs_serializer)
+{
+    value: double2 (required);
+}
+
+table SingleDouble3 (fs_serializer)
+{
+    value: double3 (required);
+}
+
+table SingleDouble4 (fs_serializer)
+{
+    value: double4 (required);
+}
+
+table SingleDouble2x2 (fs_serializer)
+{
+    value: double2x2 (required);
+}
+
+table SingleDouble2x3 (fs_serializer)
+{
+    value: double2x3 (required);
+}
+
+table SingleDouble2x4 (fs_serializer)
+{
+    value: double2x4 (required);
+}
+
+table SingleDouble3x2 (fs_serializer)
+{
+    value: double3x2 (required);
+}
+
+table SingleDouble3x3 (fs_serializer)
+{
+    value: double3x3 (required);
+}
+
+table SingleDouble3x4 (fs_serializer)
+{
+    value: double3x4 (required);
+}
+
+table SingleDouble4x2 (fs_serializer)
+{
+    value: double4x2 (required);
+}
+
+table SingleDouble4x3 (fs_serializer)
+{
+    value: double4x3 (required);
+}
+
+table SingleDouble4x4 (fs_serializer)
+{
+    value: double4x4 (required);
+}
+
+///-----------------------------------------------------------------------------
+/// list elements tables
+
+table ArrayOfFloat2 (fs_serializer)
+{
+    values: [float2] (required);
+}
+
+table ArrayOfFloat3 (fs_serializer)
+{
+    values: [float3] (required);
+}
+
+table ArrayOfFloat4 (fs_serializer)
+{
+    values: [float4] (required);
+}
+
+table ArrayOfQuaternion (fs_serializer)
+{
+    values: [quaternion] (required);
+}
+
+table ArrayOfFloat2x2 (fs_serializer)
+{
+    values: [float2x2] (required);
+}
+
+table ArrayOfFloat2x3 (fs_serializer)
+{
+    values: [float2x3] (required);
+}
+
+table ArrayOfFloat2x4 (fs_serializer)
+{
+    values: [float2x4] (required);
+}
+
+table ArrayOfFloat3x2 (fs_serializer)
+{
+    values: [float3x2] (required);
+}
+
+table ArrayOfFloat3x3 (fs_serializer)
+{
+    values: [float3x3] (required);
+}
+
+table ArrayOfFloat3x4 (fs_serializer)
+{
+    values: [float3x4] (required);
+}
+
+table ArrayOfFloat4x2 (fs_serializer)
+{
+    values: [float4x2] (required);
+}
+
+table ArrayOfFloat4x3 (fs_serializer)
+{
+    values: [float4x3] (required);
+}
+
+table ArrayOfFloat4x4 (fs_serializer)
+{
+    values: [float4x4] (required);
+}
+
+table ArrayOfInt2 (fs_serializer)
+{
+    values: [int2] (required);
+}
+
+table ArrayOfInt3 (fs_serializer)
+{
+    values: [int3] (required);
+}
+
+table ArrayOfInt4 (fs_serializer)
+{
+    values: [int4] (required);
+}
+
+table ArrayOfInt2x2 (fs_serializer)
+{
+    values: [int2x2] (required);
+}
+
+table ArrayOfInt2x3 (fs_serializer)
+{
+    values: [int2x3] (required);
+}
+
+table ArrayOfInt2x4 (fs_serializer)
+{
+    values: [int2x4] (required);
+}
+
+table ArrayOfInt3x2 (fs_serializer)
+{
+    values: [int3x2] (required);
+}
+
+table ArrayOfInt3x3 (fs_serializer)
+{
+    values: [int3x3] (required);
+}
+
+table ArrayOfInt3x4 (fs_serializer)
+{
+    values: [int3x4] (required);
+}
+
+table ArrayOfInt4x2 (fs_serializer)
+{
+    values: [int4x2] (required);
+}
+
+table ArrayOfInt4x3 (fs_serializer)
+{
+    values: [int4x3] (required);
+}
+
+table ArrayOfInt4x4 (fs_serializer)
+{
+    values: [int4x4] (required);
+}
+
+table ArrayOfUInt2 (fs_serializer)
+{
+    values: [uint2] (required);
+}
+
+table ArrayOfUInt3 (fs_serializer)
+{
+    values: [uint3] (required);
+}
+
+table ArrayOfUInt4 (fs_serializer)
+{
+    values: [uint4] (required);
+}
+
+table ArrayOfUInt2x2 (fs_serializer)
+{
+    values: [uint2x2] (required);
+}
+
+table ArrayOfUInt2x3 (fs_serializer)
+{
+    values: [uint2x3] (required);
+}
+
+table ArrayOfUInt2x4 (fs_serializer)
+{
+    values: [uint2x4] (required);
+}
+
+table ArrayOfUInt3x2 (fs_serializer)
+{
+    values: [uint3x2] (required);
+}
+
+table ArrayOfUInt3x3 (fs_serializer)
+{
+    values: [uint3x3] (required);
+}
+
+table ArrayOfUInt3x4 (fs_serializer)
+{
+    values: [uint3x4] (required);
+}
+
+table ArrayOfUInt4x2 (fs_serializer)
+{
+    values: [uint4x2] (required);
+}
+
+table ArrayOfUInt4x3 (fs_serializer)
+{
+    values: [uint4x3] (required);
+}
+
+table ArrayOfUInt4x4 (fs_serializer)
+{
+    values: [uint4x4] (required);
+}
+
+table ArrayOfBool2 (fs_serializer)
+{
+    values: [bool2] (required);
+}
+
+table ArrayOfBool3 (fs_serializer)
+{
+    values: [bool3] (required);
+}
+
+table ArrayOfBool4 (fs_serializer)
+{
+    values: [bool4] (required);
+}
+
+table ArrayOfBool2x2 (fs_serializer)
+{
+    values: [bool2x2] (required);
+}
+
+table ArrayOfBool2x3 (fs_serializer)
+{
+    values: [bool2x3] (required);
+}
+
+table ArrayOfBool2x4 (fs_serializer)
+{
+    values: [bool2x4] (required);
+}
+
+table ArrayOfBool3x2 (fs_serializer)
+{
+    values: [bool3x2] (required);
+}
+
+table ArrayOfBool3x3 (fs_serializer)
+{
+    values: [bool3x3] (required);
+}
+
+table ArrayOfBool3x4 (fs_serializer)
+{
+    values: [bool3x4] (required);
+}
+
+table ArrayOfBool4x2 (fs_serializer)
+{
+    values: [bool4x2] (required);
+}
+
+table ArrayOfBool4x3 (fs_serializer)
+{
+    values: [bool4x3] (required);
+}
+
+table ArrayOfBool4x4 (fs_serializer)
+{
+    values: [bool4x4] (required);
+}
+
+table ArrayOfDouble2 (fs_serializer)
+{
+    values: [double2] (required);
+}
+
+table ArrayOfDouble3 (fs_serializer)
+{
+    values: [double3] (required);
+}
+
+table ArrayOfDouble4 (fs_serializer)
+{
+    values: [double4] (required);
+}
+
+table ArrayOfDouble2x2 (fs_serializer)
+{
+    values: [double2x2] (required);
+}
+
+table ArrayOfDouble2x3 (fs_serializer)
+{
+    values: [double2x3] (required);
+}
+
+table ArrayOfDouble2x4 (fs_serializer)
+{
+    values: [double2x4] (required);
+}
+
+table ArrayOfDouble3x2 (fs_serializer)
+{
+    values: [double3x2] (required);
+}
+
+table ArrayOfDouble3x3 (fs_serializer)
+{
+    values: [double3x3] (required);
+}
+
+table ArrayOfDouble3x4 (fs_serializer)
+{
+    values: [double3x4] (required);
+}
+
+table ArrayOfDouble4x2 (fs_serializer)
+{
+    values: [double4x2] (required);
+}
+
+table ArrayOfDouble4x3 (fs_serializer)
+{
+    values: [double4x3] (required);
+}
+
+table ArrayOfDouble4x4 (fs_serializer)
+{
+    values: [double4x4] (required);
+}
