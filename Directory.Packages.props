@@ -19,7 +19,7 @@
     <!-- enable reproducible builds -->
     <GlobalPackageReference Include="DotNet.ReproducibleBuilds" PrivateAssets="All" Version="1.2.25" />
     <!-- enable source link -->
-    <GlobalPackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
+    <GlobalPackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" Version="8.0.0" />
     <!-- enable automatic versioning -->
     <GlobalPackageReference Include="MinVer" PrivateAssets="All" />
   </ItemGroup>
