@@ -1,11 +1,5 @@
 <Project>
 
-  <ItemGroup Label="build dependencies">
-    <PackageVersion Include="DotNet.ReproducibleBuilds" Version="1.2.25" />
-    <PackageVersion Include="Microsoft.SourceLink.GitHub" Version="8.0.0" />
-    <PackageVersion Include="MinVer" Version="6.0.0" />
-  </ItemGroup>
-
   <ItemGroup Label="nuget dependencies">
     <PackageVersion Include="FlatSharp.Compiler" Version="7.8.0" />
     <PackageVersion Include="FlatSharp.Runtime" Version="7.8.0" />
@@ -18,11 +12,11 @@
 
   <ItemGroup Label="global package references">
     <!-- enable reproducible builds -->
-    <GlobalPackageReference Include="DotNet.ReproducibleBuilds" PrivateAssets="All" />
+    <GlobalPackageReference Include="DotNet.ReproducibleBuilds" PrivateAssets="All" Version="1.2.25" />
     <!-- enable source link -->
-    <GlobalPackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
+    <GlobalPackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" Version="8.0.0" />
     <!-- enable automatic versioning -->
-    <GlobalPackageReference Include="MinVer" PrivateAssets="All" />
+    <GlobalPackageReference Include="MinVer" PrivateAssets="All" Version="6.0.0" />
   </ItemGroup>
 
 </Project>
