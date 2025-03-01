@@ -18,7 +18,7 @@
 
   <ItemGroup Label="global package references">
     <!-- enable reproducible builds -->
-    <GlobalPackageReference Include="DotNet.ReproducibleBuilds" PrivateAssets="All" />
+    <GlobalPackageReference Include="DotNet.ReproducibleBuilds" PrivateAssets="All" Version="1.2.25" />
     <!-- enable source link -->
     <GlobalPackageReference Include="Microsoft.SourceLink.GitHub" PrivateAssets="All" />
     <!-- enable automatic versioning -->
