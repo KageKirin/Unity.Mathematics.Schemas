@@ -18,6 +18,7 @@
     <FlatSharpNameNormalization>false</FlatSharpNameNormalization>
     <FlatSharpNullable>true</FlatSharpNullable>
     <FlatSharpDeserializers>Lazy;Progressive;GreedyMutable</FlatSharpDeserializers>
+    <FlatSharpInputFilesOnly>true</FlatSharpInputFilesOnly>
     <FlatSharpFileVisibility>true</FlatSharpFileVisibility>
   </PropertyGroup>
 
