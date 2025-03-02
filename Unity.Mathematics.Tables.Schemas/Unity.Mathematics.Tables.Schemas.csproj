@@ -18,6 +18,7 @@
     <FlatSharpNameNormalization>false</FlatSharpNameNormalization>
     <FlatSharpNullable>true</FlatSharpNullable>
     <FlatSharpDeserializers>Lazy;Progressive;GreedyMutable</FlatSharpDeserializers>
+    <FlatSharpInputFilesOnly>true</FlatSharpInputFilesOnly>
     <FlatSharpFileVisibility>true</FlatSharpFileVisibility>
   </PropertyGroup>
 
@@ -41,10 +42,7 @@
   </ItemGroup>
 
   <ItemGroup Label="project dependencies">
-    <ProjectReference Include="..\Unity.Mathematics.Schemas\Unity.Mathematics.Schemas.csproj" GeneratePathProperty="true">
-      <IncludeAssets>contentfiles</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </ProjectReference>
+    <ProjectReference Include="..\Unity.Mathematics.Schemas\Unity.Mathematics.Schemas.csproj" />
   </ItemGroup>
 
 </Project>
