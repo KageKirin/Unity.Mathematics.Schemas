@@ -18,6 +18,7 @@
     <FlatSharpNameNormalization>false</FlatSharpNameNormalization>
     <FlatSharpNullable>true</FlatSharpNullable>
     <FlatSharpDeserializers>Lazy;Progressive;GreedyMutable</FlatSharpDeserializers>
+    <FlatSharpFileVisibility>true</FlatSharpFileVisibility>
   </PropertyGroup>
 
   <ItemGroup Label="packaged files">
